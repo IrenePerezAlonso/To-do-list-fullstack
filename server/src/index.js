@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const server = express();
+const port = process.env.PORT || 2021;
+const localhost = `localhost:${port}`;
 
 mongoose.connect(
   process.env.DDBB_URL,
@@ -24,5 +26,5 @@ const todoRouter = require('./routes/taskRouter');
 
 server.use('/todo', todoRouter);
 
-server.listen('2021',
-  () => debug(`Server is running in ${chalk.magenta('localhost:2021')}`));
+server.listen(port,
+  () => debug(`Server is running in ${chalk.magenta(localhost)}`));
