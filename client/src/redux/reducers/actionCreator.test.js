@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { addTask, deleteTask } from './actionCreator';
+import { addTask, deleteTask, loadTasks } from './actionCreator';
 
 jest.mock('axios');
 
@@ -34,6 +34,25 @@ describe('deleteTask', () => {
     expect(dispatch).toHaveBeenCalledWith({
       type: 'DELETE_TASK',
       taskId: 1
+    });
+  });
+});
+
+describe('loadTasks', () => {
+  test('Should dispatch ERROR_TASK', async () => {
+    // arrange
+    const loadTasksRes = loadTasks();
+    global.fetch = jest.fn().mockResolvedValue({
+      json: jest.fn()
+    });
+    const dispatch = jest.fn();
+
+    // act
+    await loadTasksRes(dispatch);
+
+    // assert
+    expect(dispatch).toHaveBeenCalledWith({
+      type: 'ERROR_TASK'
     });
   });
 });
