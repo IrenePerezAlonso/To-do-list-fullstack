@@ -1,0 +1,69 @@
+@import '../styles/colors.css';
+
+.todolist-tittle {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    padding: 10px;
+    color: white;
+    background-color: $purpleDark;
+    border-radius: 5px;
+}
+
+.new-task {
+    &__input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .input-tittle {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: $purpleDark;
+            margin-right: 5%;
+        }
+        .input-input {
+            border-radius: 5px;
+            background-color: $nude;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 1% 5%;
+            border: 0;
+        }
+        .input-addButton {
+            background-color: $green;
+            margin-left: 2%;
+            border-radius:10px;
+            outline:none;
+            color: $purpleDark;
+            cursor: pointer;
+            padding: 1%;
+        }
+    }
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    &__task {
+        align-items: baseline;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: $purpleDark;
+        display: inline-flex;
+        width: 450px;
+        justify-content: space-between;
+        margin: 10px;
+        background-color: $purpleLight;
+        padding: 8px 20px;
+        border-radius: 5px;
+    }
+    &__deleteButton {
+        background-color: $red;
+        margin-left: 2%;
+        border-radius:10px;
+        outline:none;
+        color: black;
+        cursor: pointer;
+        padding: 1%;
+    }
+}
