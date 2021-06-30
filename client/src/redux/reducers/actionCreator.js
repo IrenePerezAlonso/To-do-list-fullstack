@@ -12,3 +12,13 @@ export function addTask(task) {
     });
   };
 }
+
+export function deleteTask(taskId) {
+  return async (dispatch) => {
+    await axios.delete(`${tasksUrl}/${taskId}`);
+    dispatch({
+      type: actionTypes.DELETE_TASK,
+      taskId
+    });
+  };
+}
