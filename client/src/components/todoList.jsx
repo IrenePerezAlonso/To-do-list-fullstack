@@ -21,17 +21,17 @@ const TodoList = ({ tasks, dispatch }) => {
 
   return (
     <>
-      <form>
-        <label htmlFor="new-task__input" id="new-task__input" className="new-task__input">
+      <form className="new-task">
+        <label htmlFor="new-task__input" className="new-task__input">
           <h3 className="input-tittle">ADD NEW TASK:</h3>
           <input
             type="text"
             id="new-task-name"
-            className="input"
+            className="input-input"
             placeholder="Ej. Buy milk"
           />
           <button
-            className="add-button"
+            className="input-addButton"
             type="button"
             onClick={() => handleAddTask()}
           >
@@ -39,13 +39,13 @@ const TodoList = ({ tasks, dispatch }) => {
           </button>
         </label>
       </form>
-      <ul className="to-do-list">
+      <ul className="todo-list">
         {tasks.map((task) => (
-          <li className="to-do-list__task">
+          <li className="todo-list__task">
             {' '}
             {task.name}
             <button
-              className="delete-button"
+              className="todo-list__deleteButton"
               type="button"
               onClick={() => handleDeleteTask(task._id)}
             >
